@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+      fx:controller="org.example.AddOrderController" alignment="CENTER" spacing="20">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <GridPane hgap="20" vgap="20" alignment="CENTER">
+        <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="Enter Address"/>
+
+        <Label text="Order Date:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <DatePicker fx:id="orderDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Order Status:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="orderStatusComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="150.0"/>
+
+        <Label text="Items:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextArea fx:id="itemsField" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                  promptText="Enter Items (comma separated)" prefHeight="100"/>
+    </GridPane>
+
+    <Button text="Save Order" fx:id="saveOrderButton" onAction="#saveOrder"/>
+</VBox>
