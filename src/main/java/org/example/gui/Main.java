@@ -30,7 +30,7 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Customer Management System App");
 
-
+            scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
             primaryStage.getIcons().add(new Image("/icons/AppIcon.png"));
 
 

@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.model.Customer;
 import org.example.service.CustomerService;
@@ -115,21 +116,28 @@ public class CustomerController {
     @FXML
     private void handleAddCustomer() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/CreateCustomer.fxml")); // Load the FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/CreateCustomer.fxml"));
             Parent root = loader.load();
 
-            // Pass the current controller to the CreateCustomerController
             CreateCustomerController createCustomerController = loader.getController();
             createCustomerController.setCustomerController(this);
 
             Stage stage = new Stage();
             stage.setTitle("Create New Customer");
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/icons/add_user.png")));
+
+            // CSS file
+            scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+
+            stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     /**
      * Handles the action for deleting a customer.
@@ -177,13 +185,18 @@ public class CustomerController {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/UpdateCustomer.fxml"));
                 Parent root = loader.load();
 
-                // Pass the selected customer and current controller to the UpdateCustomerController
+                // Create scene to change CSS data
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm()); // CSS dosyasını ekle
+
+                // Pass the selected customer and master controller to UpdateCustomerController
                 UpdateCustomerController updateCustomerController = loader.getController();
                 updateCustomerController.setCustomer(selectedCustomer, this);
 
                 Stage stage = new Stage();
                 stage.setTitle("Update Customer");
-                stage.setScene(new Scene(root));
+                stage.setScene(scene);
+                stage.getIcons().add(new Image("/icons/update.png")); // İkon eklemek için
                 stage.show();
 
             } catch (Exception e) {
@@ -193,6 +206,7 @@ public class CustomerController {
             showAlert("No Selection", "Please select a customer to update.");
         }
     }
+
 
     /**
      * Handles the action for opening the Order Management screen for the selected customer.
@@ -211,7 +225,13 @@ public class CustomerController {
 
                 Stage stage = new Stage();
                 stage.setTitle("Order Management");
-                stage.setScene(new Scene(root));
+                Scene scene = new Scene(root);
+
+                // Add CSS file
+                scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+
+                stage.setScene(scene);
+                stage.getIcons().add(new Image("/icons/order.png"));
                 stage.show();
             } catch (Exception e) {
                 e.printStackTrace();

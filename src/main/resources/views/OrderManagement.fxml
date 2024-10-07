@@ -3,24 +3,32 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
-            fx:controller="org.example.OrderManagementController" prefHeight="430.0" prefWidth="800.0">
-    <TextField fx:id="searchOrder" layoutX="14.0" layoutY="14.0" promptText="Search by order number"
-               prefHeight="10.0" prefWidth="350.0"/>
-    <TableView fx:id="orderTableView" layoutX="14.0" layoutY="50.0" prefHeight="300.0" prefWidth="800.0">
+            fx:controller="org.example.OrderManagementController" prefHeight="500.0" prefWidth="850.0"
+            styleClass="root">
+
+    <TextField fx:id="searchOrder" layoutX="20.0" layoutY="20.0" promptText="🔍 Search by order number"
+               prefHeight="10.0" prefWidth="350.0" styleClass="text-field"/>
+
+    <TableView fx:id="orderTableView" layoutX="14.0" layoutY="80.0" prefHeight="300.0" prefWidth="820.0"
+               styleClass="table-view">
         <columns>
-            <TableColumn fx:id="orderNumberColumn" prefWidth="100.0" text="Order Number"/>
-            <TableColumn fx:id="customerIdColumn" prefWidth="100.0" text="Customer ID"/>
-            <TableColumn fx:id="addressColumn" prefWidth="150.0" text="Address"/>
-            <TableColumn fx:id="orderDateColumn" prefWidth="100.0" text="Order Date"/>
-            <TableColumn fx:id="itemsColumn" prefWidth="150.0" text="Items"/>
-            <TableColumn fx:id="itemCountColumn" prefWidth="100.0" text="Item Count"/>
-            <TableColumn fx:id="orderStatusColumn" prefWidth="100.0" text="Order Status"/>
+            <TableColumn fx:id="orderNumberColumn" prefWidth="100.0" text="Order Number"
+                         styleClass="table-column-header"/>
+            <TableColumn fx:id="customerIdColumn" prefWidth="100.0" text="Customer ID"
+                         styleClass="table-column-header"/>
+            <TableColumn fx:id="addressColumn" prefWidth="150.0" text="Address" styleClass="table-column-header"/>
+            <TableColumn fx:id="orderDateColumn" prefWidth="100.0" text="Order Date" styleClass="table-column-header"/>
+            <TableColumn fx:id="itemsColumn" prefWidth="150.0" text="Items" styleClass="table-column-header"/>
+            <TableColumn fx:id="itemCountColumn" prefWidth="100.0" text="Item Count" styleClass="table-column-header"/>
+            <TableColumn fx:id="orderStatusColumn" prefWidth="100.0" text="Order Status"
+                         styleClass="table-column-header"/>
         </columns>
     </TableView>
-    <Button layoutX="100.0" layoutY="370.0" mnemonicParsing="false" text="Add Order" fx:id="addOrderButton"
-            onAction="#handleAddOrder"/>
-    <Button layoutX="350.0" layoutY="370.0" mnemonicParsing="false" text="Update Order" fx:id="updateOrderButton"
-            onAction="#handleUpdateOrder"/>
-    <Button layoutX="550.0" layoutY="370.0" mnemonicParsing="false" text="Delete Order" fx:id="deleteOrderButton"
-            onAction="#handleDeleteOrder"/>
+
+    <Button layoutX="100.0" layoutY="420.0" mnemonicParsing="false" text="➕ Add Order" fx:id="addOrderButton"
+            onAction="#handleAddOrder" styleClass="button"/>
+    <Button layoutX="350.0" layoutY="420.0" mnemonicParsing="false" text="🔄 Update Order" fx:id="updateOrderButton"
+            onAction="#handleUpdateOrder" styleClass="button"/>
+    <Button layoutX="600.0" layoutY="420.0" mnemonicParsing="false" text="🗑 Delete Order" fx:id="deleteOrderButton"
+            onAction="#handleDeleteOrder" styleClass="button"/>
 </AnchorPane>

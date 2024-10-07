@@ -2,22 +2,32 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
             fx:controller="org.example.UpdateCustomerController"
-            prefWidth="400.0" prefHeight="350.0">
+            prefWidth="450.0" prefHeight="350.0" styleClass="root">
 
-    <Label fx:id="nameLabel" layoutX="14.0" layoutY="50.0" text="Name:"/>
-    <TextField fx:id="nameField" layoutX="150.0" layoutY="50.0" promptText="Please enter name"/>
+    <Label fx:id="nameLabel" layoutX="20.0" layoutY="50.0" text="*Name: " styleClass="label"/>
+    <TextField fx:id="nameField" layoutX="155.0" layoutY="50.0" prefWidth="250.0" promptText="Please enter name"
+               styleClass="text-field"/>
 
-    <Label fx:id="emailLabel" layoutX="14.0" layoutY="100.0" text="Email:"/>
-    <TextField fx:id="emailField" layoutX="150.0" layoutY="100.0" promptText="Please enter email"/>
+    <Label fx:id="emailLabel" layoutX="20.0" layoutY="100.0" text="*Email: " styleClass="label"/>
+    <TextField fx:id="emailField" layoutX="155.0" layoutY="100.0" prefWidth="250.0" promptText="Please enter email"
+               styleClass="text-field"/>
 
-    <Label fx:id="phoneLabel" layoutX="14.0" layoutY="150.0" text="Phone Number:"/>
-    <TextField fx:id="phoneField" layoutX="150.0" layoutY="150.0" promptText="Please enter phone number"/>
+    <Label fx:id="phoneLabel" layoutX="20.0" layoutY="150.0" text="*Phone Number: " styleClass="label"/>
+    <TextField fx:id="phoneField" layoutX="155.0" layoutY="150.0" prefWidth="250.0"
+               promptText="Please enter phone number" styleClass="text-field"/>
+    <Text layoutX="20.0" layoutY="175.0" text="Phone number must be 10 digits" styleClass="text-field"
+          style="-fx-font-size: 9px; -fx-font-style: italic;"/>
 
-    <Label fx:id="addressLabel" layoutX="14.0" layoutY="200.0" text="Address:"/>
-    <TextField fx:id="addressField" layoutX="150.0" layoutY="200.0" promptText="Please enter address"/>
+    <Label fx:id="addressLabel" layoutX="20.0" layoutY="200.0" text="*Address: " styleClass="label"/>
+    <TextField fx:id="addressField" layoutX="155.0" layoutY="200.0" prefWidth="250.0" promptText="Please enter address"
+               styleClass="text-field"/>
 
-    <Button layoutX="150.0" layoutY="250.0" mnemonicParsing="false" text="Save" fx:id="saveButton"
-            onAction="#saveUpdatedCustomer"/>
+    <Text layoutX="160.0" layoutY="320.0" text="*: Required field." styleClass="text-field"/>
+
+    <Button fx:id="saveButton" text="Save" styleClass="button" onAction="#saveUpdatedCustomer" layoutY="260.0"
+            AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="160.0"/>
+
 </AnchorPane>

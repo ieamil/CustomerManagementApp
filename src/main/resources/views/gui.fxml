@@ -2,25 +2,35 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
-            fx:controller="org.example.CustomerController" prefHeight="490.0" prefWidth="300.0">
-    <TextField fx:id="searchField" layoutX="14.0" layoutY="14.0" promptText="Search by ID or Name" prefHeight="10.0"
-               prefWidth="350.0"/>
-    <TableView fx:id="customerTableView" layoutX="14.0" layoutY="50.0" prefHeight="300.0" prefWidth="575.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" id="customerPane" xmlns="http://javafx.com/javafx"
+            fx:controller="org.example.CustomerController" prefHeight="500.0" prefWidth="620.0"
+            styleClass="root">
+    <TextField fx:id="searchField" layoutX="20.0" layoutY="20.0" promptText="🔍 Search by ID or Name" prefHeight="10.0"
+               prefWidth="350.0" styleClass="text-field"/>
+
+    <Button layoutX="420.0" layoutY="20.0" mnemonicParsing="false" text="🛒 Order Management"
+            fx:id="orderManagementButton" onAction="#handleOrderManagement" styleClass="button"/>
+
+    <TableView fx:id="customerTableView" layoutX="14.0" layoutY="80.0" prefHeight="300.0" prefWidth="600.0"
+               styleClass="customer-table">
         <columns>
-            <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" style="-fx-alignment: CENTER"/>
-            <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Name" style="-fx-alignment: CENTER"/>
-            <TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email"/>
-            <TableColumn fx:id="phoneNumberColumn" prefWidth="100.0" text="Phone Number"/>
-            <TableColumn fx:id="addressColumn" prefWidth="100.0" text="Address" style="-fx-alignment: CENTER"/>
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" style="-fx-alignment: CENTER"
+                         styleClass="table-column-header"/>
+            <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Name" style="-fx-alignment: CENTER"
+                         styleClass="table-column-header"/>
+            <TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email" styleClass="table-column-header"/>
+            <TableColumn fx:id="phoneNumberColumn" prefWidth="100.0" text="Phone Number"
+                         styleClass="table-column-header"/>
+            <TableColumn fx:id="addressColumn" prefWidth="100.0" text="Address" style="-fx-alignment: CENTER"
+                         styleClass="table-column-header"/>
         </columns>
     </TableView>
-    <Button layoutX="100.0" layoutY="370.0" mnemonicParsing="false" text="Add Customer" fx:id="addButton"
-            onAction="#handleAddCustomer"/>
-    <Button layoutX="250.0" layoutY="370.0" mnemonicParsing="false" text="Update Customer" fx:id="updateButton"
-            onAction="#handleUpdateCustomer"/>
-    <Button layoutX="400.0" layoutY="370.0" mnemonicParsing="false" text="Delete Customer" fx:id="deleteButton"
-            onAction="#handleDeleteCustomer"/>
-    <Button layoutX="245.0" layoutY="430.0" mnemonicParsing="false" text="Order Management"
-            fx:id="orderManagementButton" onAction="#handleOrderManagement"/>
+
+    <!-- Diğer Butonlar -->
+    <Button layoutX="50.0" layoutY="420.0" mnemonicParsing="false" text="➕ Add Customer" fx:id="addButton"
+            onAction="#handleAddCustomer" styleClass="button"/>
+    <Button layoutX="230.0" layoutY="420.0" mnemonicParsing="false" text="🔄 Update Customer" fx:id="updateButton"
+            onAction="#handleUpdateCustomer" styleClass="button"/>
+    <Button layoutX="420.0" layoutY="420.0" mnemonicParsing="false" text="🗑 Delete Customer" fx:id="deleteButton"
+            onAction="#handleDeleteCustomer" styleClass="button"/>
 </AnchorPane>

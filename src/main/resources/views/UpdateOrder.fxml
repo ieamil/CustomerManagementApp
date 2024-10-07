@@ -3,30 +3,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
-      fx:controller="org.example.UpdateOrderController" spacing="20" alignment="CENTER">
+      fx:controller="org.example.UpdateOrderController" spacing="20" alignment="CENTER" styleClass="root">
 
-    <GridPane hgap="20" vgap="20" alignment="CENTER">
-        <Label text="Order Number:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <TextField fx:id="orderNumberField" GridPane.columnIndex="2" GridPane.rowIndex="1" editable="false"/>
+    <GridPane hgap="20" vgap="20" alignment="CENTER" styleClass="grid-pane">
+        <Label text="Order Number:" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="label"/>
+        <TextField fx:id="orderNumberField" GridPane.columnIndex="2" GridPane.rowIndex="1" editable="false"
+                   styleClass="text-field"/>
 
-        <Label text="Customer ID:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-        <TextField fx:id="customerField" GridPane.columnIndex="2" GridPane.rowIndex="2" editable="false"/>
+        <Label text="Customer ID:" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="label"/>
+        <TextField fx:id="customerField" GridPane.columnIndex="2" GridPane.rowIndex="2" editable="false"
+                   styleClass="text-field"/>
 
-        <Label text="Address:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-        <TextField fx:id="addressField" GridPane.columnIndex="2" GridPane.rowIndex="3" promptText="Enter new address"/>
+        <Label text="Address:" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="label"/>
+        <TextField fx:id="addressField" GridPane.columnIndex="2" GridPane.rowIndex="3" promptText="Enter new address"
+                   styleClass="text-field"/>
 
-        <Label text="Order Date:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-        <DatePicker fx:id="orderDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+        <Label text="Order Date:" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="label"/>
+        <DatePicker fx:id="orderDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="4" styleClass="date-picker"/>
 
-        <Label text="Order Status:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-        <ComboBox fx:id="orderStatusComboBox" GridPane.columnIndex="2" GridPane.rowIndex="5" prefWidth="150.0"/>
+        <Label text="Order Status:" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="label"/>
+        <ComboBox fx:id="orderStatusComboBox" GridPane.columnIndex="2" GridPane.rowIndex="5" prefWidth="150.0"
+                  styleClass="combo-box"/>
 
-        <Label text="Items:" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        <Label text="Items:" GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass="label"/>
         <TextArea fx:id="itemsField" GridPane.columnIndex="2" GridPane.rowIndex="6"
-                  promptText="Enter Items (comma separated)" prefHeight="100"/>
+                  promptText="Enter Items (comma separated)" prefHeight="100" styleClass="text-area"/>
     </GridPane>
 
-    <Button text="Save Order" fx:id="saveOrderButton" onAction="#saveOrder"/>
+    <Button text="Save Order" fx:id="saveOrderButton" onAction="#saveOrder" styleClass="button"/>
 
     <Region prefHeight="25"/>
 

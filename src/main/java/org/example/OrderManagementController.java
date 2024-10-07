@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.example.model.Order;
 import org.example.service.OrderService;
@@ -139,13 +140,17 @@ public class OrderManagementController {
 
             Stage stage = new Stage();
             stage.setTitle("Add New Order");
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm()); // CSS dosyasını ekledik.
+            stage.setScene(scene);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/icons/add_order.png")));
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
             showAlert("Loading Error", "Failed to load Add Order page.");
         }
     }
+
 
     /**
      * Handles deleting a selected order.
@@ -189,7 +194,15 @@ public class OrderManagementController {
 
                 Stage stage = new Stage();
                 stage.setTitle("Update Order");
-                stage.setScene(new Scene(root));
+
+                // Sahneyi oluştur
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm()); // CSS dosyasını ekle
+
+                stage.setScene(scene);
+                stage.getIcons().add(new Image(getClass().getResourceAsStream("/icons/update_order.png")));
+
+                stage.getIcons().add(new Image("/icons/update_order.png"));
                 stage.show();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -199,6 +212,7 @@ public class OrderManagementController {
             showAlert("No Selection", "Please select an order to update.");
         }
     }
+
 
     /**
      * Displays an alert message to the user.

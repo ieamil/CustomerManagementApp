@@ -1,0 +1,149 @@
+/* Ana arka plan rengi */
+.root {
+    -fx-background-color: #260f2a;
+}
+
+/* Arama alanı */
+.text-field {
+    -fx-background-color: #3b253e;
+    -fx-text-fill: #f0f0f0;
+    -fx-prompt-text-fill: #988b99;
+    -fx-border-color: #68566a;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 5;
+}
+
+/* Seçili tablo hücresinin arka plan rengi ve yazı rengi */
+.table-row-cell:filled:selected, .table-row-cell:focused:selected {
+    -fx-background-color: #68566a; /* Seçili satırın arka plan rengi */
+    -fx-text-fill: #f0f0f0; /* Seçili satırın yazı rengi */
+}
+
+.table-cell:selected {
+    -fx-background-color: #68566a; /* Seçili hücrenin arka plan rengi */
+    -fx-text-fill: #f0f0f0; /* Seçili hücrenin yazı rengi */
+}
+
+/* Tablo */
+.table-view {
+    -fx-background-color: #3b253e;
+    -fx-control-inner-background: #3b253e;
+    -fx-control-inner-background-alt: #3b253e;
+    -fx-text-background-color: #f0f0f0;
+    -fx-table-cell-border-color: #68566a;
+    -fx-table-header-border-color: #68566a;
+    -fx-padding: 10;
+}
+
+/* Tablo başlıkları */
+.table-column-header {
+    -fx-background-color: #513d54;
+    -fx-text-fill: #f0f0f0;
+    -fx-alignment: CENTER;
+}
+
+/* Tablo hücreleri */
+.table-cell {
+    -fx-text-fill: #f0f0f0;
+    -fx-alignment: CENTER;
+}
+
+/* Butonlar */
+.button {
+    -fx-background-color: #513d54;
+    -fx-text-fill: #f0f0f0;
+    -fx-border-color: #68566a;
+    -fx-border-radius: 20; /* Yuvarlak kenar için artırılmış değer */
+    -fx-background-radius: 20; /* Yuvarlak kenar için artırılmış değer */
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #68566a;
+}
+
+/* Genel yazı stili */
+.label {
+    -fx-text-fill: #f0f0f0;
+}
+
+/* Scroll bar için */
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #68566a;
+}
+
+/* Seçili satırın arka plan ve yazı rengi */
+.table-row-cell:selected {
+    -fx-background-color: #B5C0D0; /* Seçili satırın arka plan rengi */
+}
+
+/* DatePicker stilleri */
+.date-picker {
+    -fx-background-color: #CCD3CA;
+    -fx-text-fill: #000000;
+    -fx-border-color: #68566a;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+/* DatePicker popup stilini iyileştirmek için */
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #3b253e;
+    -fx-border-color: #68566a;
+}
+
+.date-picker .text-field {
+    -fx-text-fill: #f0f0f0;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+/* ComboBox stilleri */
+.combo-box {
+    -fx-background-color: #CCD3CA;
+    -fx-text-fill: #000000;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+/* ComboBox açılan liste stili */
+.combo-box .list-cell {
+    -fx-background-color: #3b253e;
+    -fx-text-fill: #f0f0f0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.combo-box .list-view {
+    -fx-control-inner-background: #3b253e;
+    -fx-background-color: #3b253e;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+/* TextArea stilleri */
+.text-area {
+    -fx-background-color: #3b253e; /* Arka plan rengi */
+    -fx-control-inner-background: #3b253e; /* İç kontrol arka planı */
+    -fx-text-fill: #f0f0f0; /* Yazı rengi */
+    -fx-border-color: #68566a;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-prompt-text-fill: #988b99; /* Prompt yazı rengi */
+}
+
+
+/* GridPane stilleri */
+.grid-pane {
+    -fx-padding: 20;
+    -fx-hgap: 20;
+    -fx-vgap: 20;
+}
+
+/* Seçili satır yazı rengi */
+.table-row-cell:selected .text {
+    -fx-fill: #fff400;
+}
